@@ -1,0 +1,885 @@
+
+[
+  {
+    "flagCode": "IR",
+    "country": "Iran",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.002,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.002
+  },
+  {
+    "flagCode": "ET",
+    "country": "Ethiopia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.003,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.006
+  },
+  {
+    "flagCode": "SD",
+    "country": "Sudan",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.006,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.008
+  },
+  {
+    "flagCode": "SY",
+    "country": "Syria",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.006,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.005
+  },
+  {
+    "flagCode": "CU",
+    "country": "Cuba",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.006,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.03
+  },
+  {
+    "flagCode": "LY",
+    "country": "Libya",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.008,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.01
+  },
+  {
+    "flagCode": "AO",
+    "country": "Angola",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.013,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.016
+  },
+  {
+    "flagCode": "KG",
+    "country": "Kyrgyzstan",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.013,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.01
+  },
+  {
+    "flagCode": "NG",
+    "country": "Nigeria",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.014,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.03
+  },
+  {
+    "flagCode": "IQ",
+    "country": "Iraq",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.015,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.015
+  },
+  {
+    "flagCode": "BT",
+    "country": "Bhutan",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.015,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.016
+  },
+  {
+    "flagCode": "EG",
+    "country": "Egypt",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.019,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.027
+  },
+  {
+    "flagCode": "AR",
+    "country": "Argentina",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.02,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.032
+  },
+  {
+    "flagCode": "ZM",
+    "country": "Zambia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.021,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.029
+  },
+  {
+    "flagCode": "UZ",
+    "country": "Uzbekistan",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.023,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.026
+  },
+  {
+    "flagCode": "OM",
+    "country": "Oman",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.026,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.026
+  },
+  {
+    "flagCode": "LA",
+    "country": "Laos",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.027,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.032
+  },
+  {
+    "flagCode": "KW",
+    "country": "Kuwait",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.029,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.029
+  },
+  {
+    "flagCode": "QA",
+    "country": "Qatar",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.032,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.033
+  },
+  {
+    "flagCode": "DZ",
+    "country": "Algeria",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.04,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.039
+  },
+  {
+    "flagCode": "NP",
+    "country": "Nepal",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.043,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.044
+  },
+  {
+    "flagCode": "VE",
+    "country": "Venezuela",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.046,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.045
+  },
+  {
+    "flagCode": "AZ",
+    "country": "Azerbaijan",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.047,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.047
+  },
+  {
+    "flagCode": "TR",
+    "country": "Turkey",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.048,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.073
+  },
+  {
+    "flagCode": "BH",
+    "country": "Bahrain",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.048,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.048
+  },
+  {
+    "flagCode": "KZ",
+    "country": "Kazakhstan",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.05,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.045
+  },
+  {
+    "flagCode": "PY",
+    "country": "Paraguay",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.052,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.056
+  },
+  {
+    "flagCode": "TT",
+    "country": "Trinidad and Tobago",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.052,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.052
+  },
+  {
+    "flagCode": "SA",
+    "country": "Saudi Arabia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.053,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.048
+  },
+  {
+    "flagCode": "BD",
+    "country": "Bangladesh",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.054,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.052
+  },
+  {
+    "flagCode": "MY",
+    "country": "Malaysia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.054,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.048
+  },
+  {
+    "flagCode": "AF",
+    "country": "Afghanistan",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.055,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.043
+  },
+  {
+    "flagCode": "RU",
+    "country": "Russia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.058,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.059
+  },
+  {
+    "flagCode": "CD",
+    "country": "DR Congo",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.058,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.07
+  },
+  {
+    "flagCode": "GE",
+    "country": "Georgia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.062,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.077
+  },
+  {
+    "flagCode": "UA",
+    "country": "Ukraine",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.064,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.039
+  },
+  {
+    "flagCode": "MW",
+    "country": "Malawi",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.065,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.109
+  },
+  {
+    "flagCode": "SR",
+    "country": "Suriname",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.066,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.016
+  },
+  {
+    "flagCode": "TN",
+    "country": "Tunisia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.069,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.068
+  },
+  {
+    "flagCode": "PK",
+    "country": "Pakistan",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.07,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.046
+  },
+  {
+    "flagCode": "BY",
+    "country": "Belarus",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.075,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.091
+  },
+  {
+    "flagCode": "VN",
+    "country": "Vietnam",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.076,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.08
+  },
+  {
+    "flagCode": "IN",
+    "country": "India",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.077,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.074
+  },
+  {
+    "flagCode": "CN",
+    "country": "China",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.078,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.078
+  },
+  {
+    "flagCode": "AE",
+    "country": "United Arab Emirates",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.08,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.079
+  },
+  {
+    "flagCode": "TZ",
+    "country": "Tanzania",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.084,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.096
+  },
+  {
+    "flagCode": "CM",
+    "country": "Cameroon",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.085,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.083
+  },
+  {
+    "flagCode": "JO",
+    "country": "Jordan",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.09,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.09
+  },
+  {
+    "flagCode": "TW",
+    "country": "Taiwan",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.092,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.095
+  },
+  {
+    "flagCode": "ID",
+    "country": "Indonesia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.095,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.096
+  },
+  {
+    "flagCode": "EC",
+    "country": "Ecuador",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.097,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.096
+  },
+  {
+    "flagCode": "BW",
+    "country": "Botswana",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.097,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.096
+  },
+  {
+    "flagCode": "MV",
+    "country": "Maldives",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.097,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.15
+  },
+  {
+    "flagCode": "MX",
+    "country": "Mexico",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.1,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.104
+  },
+  {
+    "flagCode": "BA",
+    "country": "Bosnia and Herzegovina",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.1,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.101
+  },
+  {
+    "flagCode": "LS",
+    "country": "Lesotho",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.107,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.092
+  },
+  {
+    "flagCode": "GH",
+    "country": "Ghana",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.108,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.033
+  },
+  {
+    "flagCode": "HU",
+    "country": "Hungary",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.109,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.115
+  },
+  {
+    "flagCode": "AM",
+    "country": "Armenia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.112,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.104
+  },
+  {
+    "flagCode": "DO",
+    "country": "Dominican Republic",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.113,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.124
+  },
+  {
+    "flagCode": "MA",
+    "country": "Morocco",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.121,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.117
+  },
+  {
+    "flagCode": "SZ",
+    "country": "Eswatini",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.123,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.098
+  },
+  {
+    "flagCode": "CA",
+    "country": "Canada",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.126,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.121
+  },
+  {
+    "flagCode": "MZ",
+    "country": "Mozambique",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.127,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.127
+  },
+  {
+    "flagCode": "MG",
+    "country": "Madagascar",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.128,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.13
+  },
+  {
+    "flagCode": "AL",
+    "country": "Albania",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.129,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.116
+  },
+  {
+    "flagCode": "KR",
+    "country": "South Korea",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.131,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.101
+  },
+  {
+    "flagCode": "MK",
+    "country": "North Macedonia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.131,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.117
+  },
+  {
+    "flagCode": "TH",
+    "country": "Thailand",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.133,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.121
+  },
+  {
+    "flagCode": "RS",
+    "country": "Serbia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.134,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.105
+  },
+  {
+    "flagCode": "MU",
+    "country": "Mauritius",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.134,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.132
+  },
+  {
+    "flagCode": "CI",
+    "country": "Ivory Coast",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.136,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.121
+  },
+  {
+    "flagCode": "LB",
+    "country": "Lebanon",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.137,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.001
+  },
+  {
+    "flagCode": "MD",
+    "country": "Moldova",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.138,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.147
+  },
+  {
+    "flagCode": "BG",
+    "country": "Bulgaria",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.147,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.14
+  },
+  {
+    "flagCode": "MT",
+    "country": "Malta",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.149,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.146
+  },
+  {
+    "flagCode": "KH",
+    "country": "Cambodia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.15,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.148
+  },
+  {
+    "flagCode": "NA",
+    "country": "Namibia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.15,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.109
+  },
+  {
+    "flagCode": "BR",
+    "country": "Brazil",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.154,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.175
+  },
+  {
+    "flagCode": "MO",
+    "country": "Macau",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.156,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.158
+  },
+  {
+    "flagCode": "HR",
+    "country": "Croatia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.167,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": null
+  },
+  {
+    "flagCode": "IS",
+    "country": "Iceland",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.169,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.15
+  },
+  {
+    "flagCode": "NO",
+    "country": "Norway",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.172,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.129
+  },
+  {
+    "flagCode": "UG",
+    "country": "Uganda",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.173,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.164
+  },
+  {
+    "flagCode": "IL",
+    "country": "Israel",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.173,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.16
+  },
+  {
+    "flagCode": "CL",
+    "country": "Chile",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.174,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.194
+  },
+  {
+    "flagCode": "CR",
+    "country": "Costa Rica",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.175,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.161
+  },
+  {
+    "flagCode": "NI",
+    "country": "Nicaragua",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.176,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.174
+  },
+  {
+    "flagCode": "RO",
+    "country": "Romania",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.179,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.176
+  },
+  {
+    "flagCode": "PA",
+    "country": "Panama",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.18,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.18
+  },
+  {
+    "flagCode": "LK",
+    "country": "Sri Lanka",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.181,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.05
+  },
+  {
+    "flagCode": "HK",
+    "country": "Hong Kong",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.181,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.173
+  },
+  {
+    "flagCode": "US",
+    "country": "United States",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.184,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.18
+  },
+  {
+    "flagCode": "SN",
+    "country": "Senegal",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.186,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.172
+  },
+  {
+    "flagCode": "FI",
+    "country": "Finland",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.186,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.456
+  },
+  {
+    "flagCode": "PE",
+    "country": "Peru",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.187,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.242
+  },
+  {
+    "flagCode": "ZA",
+    "country": "South Africa",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.191,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.151
+  },
+  {
+    "flagCode": "RW",
+    "country": "Rwanda",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.193,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.223
+  },
+  {
+    "flagCode": "TG",
+    "country": "Togo",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.197,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.193
+  },
+  {
+    "flagCode": "PH",
+    "country": "Philippines",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.202,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.176
+  },
+  {
+    "flagCode": "BF",
+    "country": "Burkina Faso",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.21,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.206
+  },
+  {
+    "flagCode": "GA",
+    "country": "Gabon",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.21,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.205
+  },
+  {
+    "flagCode": "CO",
+    "country": "Colombia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.211,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.167
+  },
+  {
+    "flagCode": "AW",
+    "country": "Aruba",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.212,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.183
+  },
+  {
+    "flagCode": "SK",
+    "country": "Slovakia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.215,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.207
+  },
+  {
+    "flagCode": "BZ",
+    "country": "Belize",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.217,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.218
+  },
+  {
+    "flagCode": "NZ",
+    "country": "New Zealand",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.22,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.191
+  },
+  {
+    "flagCode": "JP",
+    "country": "Japan",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.221,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.247
+  },
+  {
+    "flagCode": "ML",
+    "country": "Mali",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.223,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.218
+  },
+  {
+    "flagCode": "GR",
+    "country": "Greece",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.223,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.273
+  },
+  {
+    "flagCode": "SE",
+    "country": "Sweden",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.224,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.348
+  },
+  {
+    "flagCode": "SV",
+    "country": "El Salvador",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.224,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.24
+  },
+  {
+    "flagCode": "ES",
+    "country": "Spain",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.226,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.371
+  },
+  {
+    "flagCode": "HN",
+    "country": "Honduras",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.231,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.231
+  },
+  {
+    "flagCode": "PT",
+    "country": "Portugal",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.234,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.295
+  },
+  {
+    "flagCode": "LU",
+    "country": "Luxembourg",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.234,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.24
+  },
+  {
+    "flagCode": "PL",
+    "country": "Poland",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.241,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.194
+  },
+  {
+    "flagCode": "SI",
+    "country": "Slovenia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.242,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.295
+  },
+  {
+    "flagCode": "UY",
+    "country": "Uruguay",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.243,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.25
+  },
+  {
+    "flagCode": "SL",
+    "country": "Sierra Leone",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.253,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.081
+  },
+  {
+    "flagCode": "SG",
+    "country": "Singapore",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.254,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.238
+  },
+  {
+    "flagCode": "KE",
+    "country": "Kenya",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.256,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.156
+  },
+  {
+    "flagCode": "LV",
+    "country": "Latvia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.256,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.317
+  },
+  {
+    "flagCode": "NL",
+    "country": "Netherlands",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.266,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.491
+  },
+  {
+    "flagCode": "LT",
+    "country": "Lithuania",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.267,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.502
+  },
+  {
+    "flagCode": "AU",
+    "country": "Australia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.273,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.238
+  },
+  {
+    "flagCode": "EE",
+    "country": "Estonia",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.291,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.393
+  },
+  {
+    "flagCode": "JM",
+    "country": "Jamaica",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.292,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.325
+  },
+  {
+    "flagCode": "GT",
+    "country": "Guatemala",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.298,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.281
+  },
+  {
+    "flagCode": "CY",
+    "country": "Cyprus",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.312,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.382
+  },
+  {
+    "flagCode": "FR",
+    "country": "France",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.315,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.218
+  },
+  {
+    "flagCode": "CV",
+    "country": "Cape Verde",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.32,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.313
+  },
+  {
+    "flagCode": "BS",
+    "country": "Bahamas",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.346,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.26
+  },
+  {
+    "flagCode": "CZ",
+    "country": "Czech Republic",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.359,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.453
+  },
+  {
+    "flagCode": "AT",
+    "country": "Austria",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.36,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.502
+  },
+  {
+    "flagCode": "DE",
+    "country": "Germany",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.365,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.557
+  },
+  {
+    "flagCode": "BE",
+    "country": "Belgium",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.365,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.524
+  },
+  {
+    "flagCode": "GB",
+    "country": "United Kingdom",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.368,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.421
+  },
+  {
+    "flagCode": "BB",
+    "country": "Barbados",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.373,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.273
+  },
+  {
+    "flagCode": "DK",
+    "country": "Denmark",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.384,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.579
+  },
+  {
+    "flagCode": "CH",
+    "country": "Switzerland",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.404,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.234
+  },
+  {
+    "flagCode": "LI",
+    "country": "Liechtenstein",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.408,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.29
+  },
+  {
+    "flagCode": "KY",
+    "country": "Cayman Islands",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.433,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.444
+  },
+  {
+    "flagCode": "IE",
+    "country": "Ireland",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.439,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.426
+  },
+  {
+    "flagCode": "IT",
+    "country": "Italy",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.457,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.579
+  },
+  {
+    "flagCode": "BM",
+    "country": "Bermuda",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": 0.458,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.46
+  },
+  {
+    "flagCode": "ZW",
+    "country": "Zimbabwe",
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2024March": null,
+    "CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept": 0.015
+  }
+]
