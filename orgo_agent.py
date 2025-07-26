@@ -2,6 +2,8 @@ import os
 import json
 import time
 import requests
+import subprocess
+import sys
 from orgo import Computer
 from datetime import datetime
 from dotenv import load_dotenv
@@ -39,14 +41,13 @@ class SolarCalcOrgo:
     def get_country_from_coordinates(self, lat, lon):
         """Get country from coordinates using reverse geocoding"""
         try:
-            # Using OpenStreetMap Nominatim for reverse geocoding (free)
             url = f"https://nominatim.openstreetmap.org/reverse"
             params = {
                 'lat': lat,
                 'lon': lon,
                 'format': 'json',
                 'addressdetails': 1,
-                'zoom': 3  # Country level
+                'zoom': 3
             }
             headers = {'User-Agent': 'SolarCalc-Orgo/1.0'}
             
@@ -68,10 +69,8 @@ class SolarCalcOrgo:
         if not self.electricity_costs:
             return None
         
-        # Search for the country in the database
         for entry in self.electricity_costs:
             if entry['country'].lower() == country_name.lower():
-                # Use the most recent cost (2024 March if available, otherwise 2022 Sept)
                 cost_2024 = entry.get('CostOfElectricity_ElectricityCost_USDPerkWh_2024March')
                 cost_2022 = entry.get('CostOfElectricity_ElectricityCost_USDPerkWh_2022Sept')
                 
@@ -80,7 +79,6 @@ class SolarCalcOrgo:
                     print(f"💰 Electricity cost for {country_name}: ${cost:.3f}/kWh")
                     return cost
         
-        # If country not found, try partial matching
         country_lower = country_name.lower()
         for entry in self.electricity_costs:
             if country_lower in entry['country'].lower() or entry['country'].lower() in country_lower:
@@ -96,15 +94,9 @@ class SolarCalcOrgo:
         return None
     
     def calculate_solar_potential(self, address, save_report=True):
-        """
-        Calculate solar potential for a given address and get electricity costs
-        Args:
-            address (str): Building address
-            save_report (bool): Save the report
-        """
+        """Calculate solar potential for a given address and get electricity costs"""
         print(f"🌞 Solar analysis for: {address}")
         
-        # Enhanced instructions to extract coordinates and solar data
         instruction = f"""
 You are a Solar Energy Data Extraction Specialist. Your role is to navigate the PVGIS website, configure solar calculations, and extract precise data with coordinates.
 
@@ -125,7 +117,7 @@ STEP-BY-STEP PROCESS:
    - Verify: Check that the map shows the correct location
 
 3. EXTRACT COORDINATES
-   - Look at the right panel for "Selected:" coordinates
+   - Look at the right section for "Selected:" coordinates
    - Record the exact latitude and longitude values shown
    - Reasoning: These coordinates are crucial for country identification
 
@@ -144,31 +136,41 @@ STEP-BY-STEP PROCESS:
    - Observe: Wait for results page with orange background to load
    - Verify: Look for "Simulation outputs:" section
 
-6. EXTRACT SOLAR DATA
-   - Find these exact values in "Simulation outputs:":
-     * "Yearly PV energy production [kWh]:" → Record the number
-     * "Yearly in-plane irradiation [kWh/m²]:" → Record the number
-   - Reasoning: These are the key metrics for solar potential assessment
-
-EXAMPLE OF SUCCESSFUL EXTRACTION:
-For "Eiffel Tower, Paris":
-- Navigate to PVGIS → Success
-- Enter address → Map centers on Paris
-- Coordinates shown: 48.8584, 2.2945
-- Configure 5kWp system → Settings applied
-- Generate results → Page loads with data
-- Extract: Production = 4,847 kWh, Irradiation = 1,367 kWh/m²
-
-CRITICAL SUCCESS FACTORS:
-- Always wait for pages/maps to fully load before proceeding
-- Double-check coordinate extraction from "Selected:" field
-- Ensure 5kWp is properly set before generating results
-- Look specifically for the "Simulation outputs:" section
-
-IF PROBLEMS OCCUR:
-- Page won't load → Wait longer, then refresh if needed
-- Address not found → Try broader location (city, country)
-- Results don't appear → Check if all settings are configured correctly
+6. EXTRACT SOLAR DATA - CRITICAL STEP
+   **IMPORTANT: You must locate the "Simulation outputs:" section in the left panel of the results page.**
+   
+   This section appears as a blue-headed table with specific rows. Look for these EXACT labels:
+   
+   **For Production Value:**
+   - Find the row labeled EXACTLY: "Yearly PV energy production [kWh]:"
+   - This will be followed by a numerical value (example: 1696.92)
+   - DO NOT confuse with "Monthly energy output" or any other production metric
+   - The value represents annual electricity generation in kWh for the configured system
+   
+   **For Irradiation Value:**
+   - Find the row labeled EXACTLY: "Yearly in-plane irradiation [kWh/m²]:"
+   - This will be followed by a numerical value (example: 2290.96)
+   - DO NOT confuse with "Global horizontal irradiation" or other irradiation metrics
+   - This represents the solar energy hitting the tilted PV panels per square meter per year
+   
+   **Visual Reference:** 
+   - The "Simulation outputs:" section is located in the left panel
+   - It has a blue header and contains multiple rows of data
+   - These values are typically displayed as decimal numbers
+   - Example format: "Yearly PV energy production [kWh]: 1696.92"
+   - Example format: "Yearly in-plane irradiation [kWh/m²]: 2290.96"
+   
+   **Extraction Strategy:**
+   1. Scroll through the "Simulation outputs:" section carefully
+   2. Read each row label completely before recording values
+   3. Copy the exact numerical value (including decimals)
+   4. Double-check you have the correct labels before proceeding
+   
+   **Common Mistakes to Avoid:**
+   - Don't take values from the monthly chart
+   - Don't use "Global horizontal irradiation" instead of "in-plane irradiation"
+   - Don't use summary values from other sections
+   - Don't round the numbers - use exact values shown
 
 MANDATORY OUTPUT FORMAT:
 End your response with exactly this format:
@@ -179,6 +181,12 @@ Production: [exact value] kWh
 Irradiation: [exact value] kWh/m²"
 
 Replace bracketed values with the exact numbers from the PVGIS interface.
+
+VERIFICATION CHECKLIST:
+- [ ] Coordinates are from the "Selected:" field
+- [ ] Production value is from "Yearly PV energy production [kWh]:" row
+- [ ] Irradiation value is from "Yearly in-plane irradiation [kWh/m²]:" row
+- [ ] All values are exact numbers from the interface (with decimals)
 """
         
         try:
@@ -187,14 +195,12 @@ Replace bracketed values with the exact numbers from the PVGIS interface.
                 instruction=instruction,
                 model="claude-sonnet-4-20250514",
                 api_key=self.claude_api_key,
-                max_iterations=20,
+                max_iterations=30,
                 max_tokens=1024
             )
             
-            # Extract solar data and coordinates
             result = self.extract_solar_and_geo_data(messages)
             
-            # Get country and electricity cost if coordinates were found
             if result and result.get('latitude') and result.get('longitude'):
                 country = self.get_country_from_coordinates(
                     result['latitude'], 
@@ -210,7 +216,6 @@ Replace bracketed values with the exact numbers from the PVGIS interface.
                 result['country'] = None
                 result['electricity_cost_usd_kwh'] = None
             
-            # Save results
             if save_report:
                 self.save_results(address, messages, result)
             
@@ -235,7 +240,6 @@ Replace bracketed values with the exact numbers from the PVGIS interface.
             "status": "extraction_attempted"
         }
         
-        # Convert messages to string for analysis
         messages_text = str(messages).lower()
         
         print("🔍 Analyzing results...")
@@ -258,18 +262,15 @@ Replace bracketed values with the exact numbers from the PVGIS interface.
                 prod_value = float(formatted_match.group(3))
                 irrad_value = float(formatted_match.group(4))
                 
-                # Validate coordinates (basic range check)
                 if -90 <= lat <= 90 and -180 <= lon <= 180:
                     solar_data['latitude'] = lat
                     solar_data['longitude'] = lon
                     print(f"✅ Coordinates extracted: {lat}, {lon}")
                 
-                # Validate production (for 5kWp system: reasonable range)
                 if prod_value > 0:
                     solar_data['annual_production_kwh'] = prod_value
                     print(f"✅ Production extracted: {prod_value} kWh/year (5kWp)")
                 
-                # Validate irradiation (positive value)
                 if irrad_value > 0:
                     solar_data['irradiation_kwh_m2'] = irrad_value
                     print(f"✅ Irradiation extracted: {irrad_value} kWh/m²/year")
@@ -319,7 +320,6 @@ Replace bracketed values with the exact numbers from the PVGIS interface.
             for match in matches:
                 try:
                     value = float(match)
-                    # Only accept positive values
                     if value > 0:
                         solar_data['annual_production_kwh'] = value
                         print(f"✅ Production found: {value} kWh/year (5kWp)")
@@ -343,7 +343,6 @@ Replace bracketed values with the exact numbers from the PVGIS interface.
             for match in matches:
                 try:
                     value = float(match)
-                    # Only accept positive values
                     if value > 0:
                         solar_data['irradiation_kwh_m2'] = value
                         print(f"✅ Irradiation found: {value} kWh/m²/year")
@@ -380,7 +379,7 @@ Replace bracketed values with the exact numbers from the PVGIS interface.
             "address": address,
             "timestamp": timestamp,
             "extracted_data": extracted_data,
-            "messages": str(messages)[:2000],  # Limit size
+            "messages": str(messages)[:2000],
             "status": extracted_data.get('status', 'unknown')
         }
         
@@ -398,7 +397,6 @@ Replace bracketed values with the exact numbers from the PVGIS interface.
             result = self.calculate_solar_potential(address)
             results.append({"address": address, "data": result})
             
-            # Pause between calculations to avoid overload
             if i < len(addresses_list) - 1:
                 print("⏸️ 30s pause to save API costs...")
                 time.sleep(30)
@@ -455,7 +453,7 @@ Replace bracketed values with the exact numbers from the PVGIS interface.
 🌍 LOCATION DATA:
 • Coordinates: {coordinates}
 • Country: {country if country else 'Not found'}
-• Electricity cost: ${electricity_cost:.3f}/kWh" if electricity_cost else "Not available"
+• Electricity cost: {f'${electricity_cost:.3f}/kWh' if electricity_cost else 'Not available'}
 
 📊 SOLAR POTENTIAL:
 • Annual production: {f"{production:,} kWh/year" if production else "Not extracted"}
@@ -467,11 +465,10 @@ Replace bracketed values with the exact numbers from the PVGIS interface.
 • Mounting: Free-standing, 35° slope, South-facing
         """
         
-        # Only add economic analysis if we have both production and electricity cost
         if production and electricity_cost:
             savings_per_year_usd = int(production * electricity_cost)
-            co2_avoided = int(production * 0.4)  # 0.4kg CO2/kWh
-            system_cost_usd = 5000 * 3  # 5kWp × $3/Watt = $15,000
+            co2_avoided = int(production * 0.4)
+            system_cost_usd = 5000 * 3
             payback_years = int(system_cost_usd / savings_per_year_usd) if savings_per_year_usd > 0 else 'N/A'
             
             report += f"""
@@ -498,34 +495,67 @@ Replace bracketed values with the exact numbers from the PVGIS interface.
             """
         
         return report
+    
+    def launch_streamlit_dashboard(self):
+        """Launch the Streamlit dashboard automatically"""
+        print("\n🚀 Launching Streamlit Dashboard...")
+        
+        # Create the dashboard script if it doesn't exist
+        dashboard_script = "solar_dashboard.py"
+        
+        try:
+            # Launch Streamlit in a separate process
+            print("🌐 Opening dashboard in browser...")
+            
+            # Check if streamlit is installed
+            try:
+                import streamlit
+                print("✅ Streamlit is available")
+            except ImportError:
+                print("❌ Streamlit not installed. Installing...")
+                subprocess.check_call([sys.executable, "-m", "pip", "install", "streamlit", "folium", "streamlit-folium", "plotly"])
+                print("✅ Streamlit installed successfully")
+            
+            # Launch the dashboard
+            subprocess.Popen([
+                sys.executable, "-m", "streamlit", "run", dashboard_script,
+                "--server.headless", "false",
+                "--server.port", "8501",
+                "--browser.gatherUsageStats", "false"
+            ])
+            
+            print("🎉 Dashboard launched successfully!")
+            print("🌐 Access your dashboard at: http://localhost:8501")
+            print("📱 The dashboard will open automatically in your browser")
+            
+        except Exception as e:
+            print(f"❌ Error launching dashboard: {e}")
+            print(f"💡 You can manually run: streamlit run {dashboard_script}")
 
 # MAIN USAGE
 def main():
-    # Load environment variables
     load_dotenv()
     
-    # Configuration
     PROJECT_ID = os.getenv("PROJECT_ID")
     ORGO_API_KEY = os.getenv("ORGO_API_KEY") 
     CLAUDE_API_KEY = os.getenv("CLAUDE_API_KEY")
     
-    # Initialize agent
     solar_agent = SolarCalcOrgo(
         project_id=PROJECT_ID,
         orgo_api_key=ORGO_API_KEY,
         claude_api_key=CLAUDE_API_KEY
     )
     
-    print("🌞 SolarCalc Orgo - Only Real Data Extraction")
+    print("🌞 SolarCalc Orgo - Avec Interface Streamlit")
     print("=" * 80)
     
-    # Test with multiple addresses
     test_addresses = [
         "San francisco, Larkin Street",
         # "Eiffel Tower, Paris, France",
         # "Times Square, New York, USA"
     ]
     
+    # Execute solar calculations
     for i, test_address in enumerate(test_addresses):
         print(f"\n🏠 Testing {i+1}/{len(test_addresses)}: {test_address}")
         solar_data = solar_agent.calculate_solar_potential(test_address)
@@ -534,14 +564,23 @@ def main():
         report = solar_agent.generate_enhanced_report(test_address, solar_data)
         print(report)
         
-        # Add delay between tests
         if i < len(test_addresses) - 1:
             print("\n⏸️ Waiting 30 seconds before next calculation...")
             time.sleep(30)
     
-    # Debug: see what the agent actually retrieved
+    # Debug info
     print("\n🔍 DEBUG - Last calculation details:")
     solar_agent.debug_last_results()
+    
+    # Launch Streamlit Dashboard
+    print("\n" + "="*80)
+    print("🚀 LAUNCHING INTERACTIVE DASHBOARD")
+    print("="*80)
+    
+    solar_agent.launch_streamlit_dashboard()
+    
+    print("\n✅ Analysis complete! Dashboard is running.")
+    print("🔗 Visit http://localhost:8501 to view your results")
 
 if __name__ == "__main__":
     main()
