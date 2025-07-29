@@ -168,13 +168,13 @@ class SolarCalcOrgo:
         - Don't use summary values from other sections
         - Don't round the numbers - use exact values shown
 
-        7. REDIRECT TO SOLAR STORE - FINAL STEP
+        7. REDIRECT TO SOLAR STORE - NEXT STEP
         - Open another new tab (Ctrl+T)
         - Navigate to: https://a1solarstore.com/
         - Wait for the page to fully load
         - Reasoning: Direct the user to a solar equipment store where they can take action on their solar potential
         
-        8. POST ON TWITTER - NEW STEP
+        8. POST ON TWITTER - FINAL STEP
         - Open Twitter in a new tab (Ctrl+T then go to https://twitter.com)
         - Wait for Twitter to fully load
         - Click on "Post" or "What's happening?" field
