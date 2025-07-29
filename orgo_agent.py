@@ -98,96 +98,118 @@ class SolarCalcOrgo:
         print(f"🌞 Solar analysis for: {address}")
         
         instruction = f"""
-You are a Solar Energy Data Extraction Specialist. Your role is to navigate the PVGIS website, configure solar calculations, and extract precise data with coordinates.
+        You are a Solar Energy Data Extraction Specialist. Your role is to navigate the PVGIS website, configure solar calculations, extract precise data with coordinates, and then share results on social media.
 
-TASK: Extract solar potential data for "{address}" using PVGIS calculator
+        TASK: Extract solar potential data for "{address}" using PVGIS calculator, then post on Twitter and redirect to solar store
 
-REASONING APPROACH: Think step by step, observe results after each action, and adapt if needed.
+        REASONING APPROACH: Think step by step, observe results after each action, and adapt if needed.
 
-STEP-BY-STEP PROCESS:
-1. NAVIGATE TO PVGIS
-   - Open Firefox browser
-   - Go to https://re.jrc.ec.europa.eu/pvg_tools/en/
-   - Wait for page to fully load (look for address input field)
+        STEP-BY-STEP PROCESS:
+        1. NAVIGATE TO PVGIS
+        - Open Firefox browser
+        - Go to https://re.jrc.ec.europa.eu/pvg_tools/en/
+        - Wait 5 sec for page to fully load (look for address input field)
 
-2. LOCATE ADDRESS
-   - Type "{address}" in the Address field
-   - Click "Go!" button
-   - Observe: Wait for map to center on location (zoom animation will occur)
-   - Verify: Check that the map shows the correct location
+        2. LOCATE ADDRESS
+        - Type "{address}" in the Address field
+        - Click "Go!" button
 
-3. EXTRACT COORDINATES
-   - Look at the right section for "Selected:" coordinates
-   - Record the exact latitude and longitude values shown
-   - Reasoning: These coordinates are crucial for country identification
+        3. EXTRACT COORDINATES
+        - Look at the right section for "Selected:" coordinates
+        - Record the exact latitude and longitude values shown
+        - Reasoning: These coordinates are crucial for country identification
 
-4. CONFIGURE SOLAR SYSTEM
-   - In the orange "PERFORMANCE OF GRID-CONNECTED PV" panel:
-     * PV technology: Verify "Crystalline silicon" is selected
-     * Installed peak PV power: Change from 1 to 5 kWp
-     * System loss: Keep default 14%
-     * Mounting position: Keep "Free-standing"
-     * Slope: Keep default 35°
-     * Azimuth: Keep default 0°
-   - Reasoning: 5kWp represents a typical residential system size
+        4. CONFIGURE SOLAR SYSTEM
+        - In the orange "PERFORMANCE OF GRID-CONNECTED PV" panel:
+            * PV technology: Verify "Crystalline silicon" is selected
+            * Installed peak PV power: Change from 1 to 5 kWp
+            * System loss: Keep default 14%
+            * Mounting position: Keep "Free-standing"
+            * Slope: Keep default 35°
+            * Azimuth: Keep default 0°
+        - Reasoning: 5kWp represents a typical residential system size
 
-5. GENERATE RESULTS
-   - Click "Visualize results" (blue button)
-   - Observe: Wait for results page with orange background to load
-   - Verify: Look for "Simulation outputs:" section
+        5. GENERATE RESULTS
+        - Click "Visualize results" (blue button)
+        - Observe: Wait for results page with orange background to load
+        - Verify: Look for "Simulation outputs:" section
 
-6. EXTRACT SOLAR DATA - CRITICAL STEP
-   **IMPORTANT: You must locate the "Simulation outputs:" section in the left panel of the results page.**
-   
-   This section appears as a blue-headed table with specific rows. Look for these EXACT labels:
-   
-   **For Production Value:**
-   - Find the row labeled EXACTLY: "Yearly PV energy production [kWh]:"
-   - This will be followed by a numerical value (example: 1696.92)
-   - DO NOT confuse with "Monthly energy output" or any other production metric
-   - The value represents annual electricity generation in kWh for the configured system
-   
-   **For Irradiation Value:**
-   - Find the row labeled EXACTLY: "Yearly in-plane irradiation [kWh/m²]:"
-   - This will be followed by a numerical value (example: 2290.96)
-   - DO NOT confuse with "Global horizontal irradiation" or other irradiation metrics
-   - This represents the solar energy hitting the tilted PV panels per square meter per year
-   
-   **Visual Reference:** 
-   - The "Simulation outputs:" section is located in the left panel
-   - It has a blue header and contains multiple rows of data
-   - These values are typically displayed as decimal numbers
-   - Example format: "Yearly PV energy production [kWh]: 1696.92"
-   - Example format: "Yearly in-plane irradiation [kWh/m²]: 2290.96"
-   
-   **Extraction Strategy:**
-   1. Scroll through the "Simulation outputs:" section carefully
-   2. Read each row label completely before recording values
-   3. Copy the exact numerical value (including decimals)
-   4. Double-check you have the correct labels before proceeding
-   
-   **Common Mistakes to Avoid:**
-   - Don't take values from the monthly chart
-   - Don't use "Global horizontal irradiation" instead of "in-plane irradiation"
-   - Don't use summary values from other sections
-   - Don't round the numbers - use exact values shown
+        6. EXTRACT SOLAR DATA - CRITICAL STEP
+        **IMPORTANT: You must locate the "Simulation outputs:" section in the left panel of the results page.**
 
-MANDATORY OUTPUT FORMAT:
-End your response with exactly this format:
+        This section appears as a blue-headed table with specific rows. Look for these EXACT labels:
 
-"EXTRACTED DATA:
-Coordinates: [exact latitude], [exact longitude]
-Production: [exact value] kWh
-Irradiation: [exact value] kWh/m²"
+        **For Production Value:**
+        - Find the row labeled EXACTLY: "Yearly PV energy production [kWh]:"
+        - This will be followed by a numerical value 
+        - DO NOT confuse with "Monthly energy output" or any other production metric
+        - The value represents annual electricity generation in kWh for the configured system
 
-Replace bracketed values with the exact numbers from the PVGIS interface.
+        **For Irradiation Value:**
+        - Find the row labeled EXACTLY: "Yearly in-plane irradiation [kWh/m²]:"
+        - This will be followed by a numerical value
+        - DO NOT confuse with "Global horizontal irradiation" or other irradiation metrics
+        - This represents the solar energy hitting the tilted PV panels per square meter per year
 
-VERIFICATION CHECKLIST:
-- [ ] Coordinates are from the "Selected:" field
-- [ ] Production value is from "Yearly PV energy production [kWh]:" row
-- [ ] Irradiation value is from "Yearly in-plane irradiation [kWh/m²]:" row
-- [ ] All values are exact numbers from the interface (with decimals)
-"""
+        **Visual Reference:** 
+        - The "Simulation outputs:" section is located in the left panel
+        - It has a blue header and contains multiple rows of data
+        - These values are typically displayed as decimal numbers
+
+        **Extraction Strategy:**
+        1. Scroll through the "Simulation outputs:" section carefully
+        2. Read each row label completely before recording values
+        3. Copy the exact numerical value (including decimals)
+        4. Double-check you have the correct labels before proceeding
+
+        **Common Mistakes to Avoid:**
+        - Don't take values from the monthly chart
+        - Don't use "Global horizontal irradiation" instead of "in-plane irradiation"
+        - Don't use summary values from other sections
+        - Don't round the numbers - use exact values shown
+
+        7. REDIRECT TO SOLAR STORE - FINAL STEP
+        - Open another new tab (Ctrl+T)
+        - Navigate to: https://a1solarstore.com/
+        - Wait for the page to fully load
+        - Reasoning: Direct the user to a solar equipment store where they can take action on their solar potential
+        
+        8. POST ON TWITTER - NEW STEP
+        - Open Twitter in a new tab (Ctrl+T then go to https://twitter.com)
+        - Wait for Twitter to fully load
+        - Click on "Post" or "What's happening?" field
+        - Type exactly this tweet:
+
+        "🌞 Just discovered my rooftop could produce [PRODUCTION_VALUE] kWh/year of solar energy! That's enough to power my home and save $900/year on electricity ⚡
+        Calculated instantly with my agent on @OrgoAI using real solar data ☀️
+        #SolarScope #AI #ClimateTech #CleanEnergy #OrgoHackathon"
+
+        - Replace [PRODUCTION_VALUE] with the exact production value from step 6 (rounded to nearest 100)
+        - Click "Post" button
+        - Observe: Wait for tweet to be published successfully
+        - Reasoning: Showcases the practical value and promotes the OrgoAI platform
+
+        MANDATORY OUTPUT FORMAT:
+        End your response with exactly this format:
+
+        "EXTRACTED DATA:
+        Coordinates: [exact latitude], [exact longitude]
+        Production: [exact value] kWh
+        Irradiation: [exact value] kWh/m²
+
+        SOCIAL MEDIA: Tweet posted successfully on Twitter
+        NEXT STEP: User redirected to A1 Solar Store for solar equipment options"
+
+        Replace bracketed values with the exact numbers from the PVGIS interface.
+
+        VERIFICATION CHECKLIST:
+        - [ ] Coordinates are from the "Selected:" field
+        - [ ] Production value is from "Yearly PV energy production [kWh]:" row
+        - [ ] Irradiation value is from "Yearly in-plane irradiation [kWh/m²]:" row
+        - [ ] All values are exact numbers from the interface (with decimals)
+        - [ ] Twitter tab opened and tweet posted
+        - [ ] A1 Solar Store tab opened for user
+        """
         
         try:
             print("🤖 Launching Orgo agent...")
@@ -195,8 +217,8 @@ VERIFICATION CHECKLIST:
                 instruction=instruction,
                 model="claude-sonnet-4-20250514",
                 api_key=self.claude_api_key,
-                max_iterations=30,
-                max_tokens=1024
+                max_iterations=35,
+                max_tokens=4096
             )
             
             result = self.extract_solar_and_geo_data(messages)
@@ -533,6 +555,101 @@ VERIFICATION CHECKLIST:
             print(f"💡 You can manually run: streamlit run {dashboard_script}")
 
 # MAIN USAGE
+def get_user_addresses():
+    """
+    Get addresses from user input with interactive menu
+    """
+    addresses = []
+    
+    print("\n🏠 ADDRESS INPUT")
+    print("=" * 50)
+    print("Enter addresses for solar potential analysis.")
+    print("You can add multiple addresses or just one.")
+    print("Type 'done' when finished, or 'quit' to exit.\n")
+    
+    while True:
+        try:
+            # Show current addresses
+            if addresses:
+                print(f"\n📍 Current addresses ({len(addresses)}):")
+                for i, addr in enumerate(addresses, 1):
+                    print(f"   {i}. {addr}")
+            
+            # Get user input
+            user_input = input(f"\n🔍 Enter address #{len(addresses) + 1} (or 'done'/'quit'): ").strip()
+            
+            # Handle special commands
+            if user_input.lower() in ['done', 'd']:
+                if addresses:
+                    break
+                else:
+                    print("⚠️  Please enter at least one address before finishing.")
+                    continue
+            
+            if user_input.lower() in ['quit', 'exit', 'q']:
+                print("👋 Goodbye!")
+                return None
+            
+            # Validate address input
+            if not user_input:
+                print("⚠️  Please enter a valid address.")
+                continue
+            
+            if len(user_input) < 3:
+                print("⚠️  Address seems too short. Please enter a more complete address.")
+                continue
+            
+            # Add address to list
+            addresses.append(user_input)
+            print(f"✅ Added: {user_input}")
+            
+            # Ask if user wants to continue
+            if len(addresses) >= 1:
+                continue_input = input("➕ Add another address? (y/n): ").lower()
+                if continue_input in ['n', 'no']:
+                    break
+        
+        except KeyboardInterrupt:
+            print("\n\n👋 Process interrupted by user.")
+            return None
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            continue
+    
+    return addresses
+
+def confirm_addresses(addresses):
+    """
+    Show final confirmation of addresses
+    """
+    print("\n📋 CONFIRMATION")
+    print("=" * 50)
+    print("You have entered the following addresses:")
+    
+    for i, addr in enumerate(addresses, 1):
+        print(f"   {i}. {addr}")
+    
+    while True:
+        confirm = input(f"\n✅ Proceed with analysis of {len(addresses)} address(es)? (y/n): ").lower()
+        
+        if confirm in ['y', 'yes']:
+            return True
+        elif confirm in ['n', 'no']:
+            return False
+        else:
+            print("⚠️  Please enter 'y' for yes or 'n' for no.")
+
+def display_progress_bar(current, total, address):
+    """
+    Display a simple progress bar
+    """
+    progress = int(50 * current / total)
+    bar = "█" * progress + "-" * (50 - progress)
+    percent = int(100 * current / total)
+    
+    print(f"\n🌞 Progress: [{bar}] {percent}% ({current}/{total})")
+    print(f"📍 Current: {address}")
+
 def main():
     load_dotenv()
     
@@ -540,47 +657,133 @@ def main():
     ORGO_API_KEY = os.getenv("ORGO_API_KEY") 
     CLAUDE_API_KEY = os.getenv("CLAUDE_API_KEY")
     
-    solar_agent = SolarCalcOrgo(
-        project_id=PROJECT_ID,
-        orgo_api_key=ORGO_API_KEY,
-        claude_api_key=CLAUDE_API_KEY
-    )
+    # Check for required environment variables
+    missing_vars = []
+    if not PROJECT_ID:
+        missing_vars.append("PROJECT_ID")
+    if not ORGO_API_KEY:
+        missing_vars.append("ORGO_API_KEY")
+    if not CLAUDE_API_KEY:
+        missing_vars.append("CLAUDE_API_KEY")
     
-    print("🌞 SolarCalc Orgo - Avec Interface Streamlit")
+    if missing_vars:
+        print("❌ Missing required environment variables:")
+        for var in missing_vars:
+            print(f"   - {var}")
+        print("\n💡 Please set these variables in your .env file")
+        return
+    
+    # Initialize solar agent
+    try:
+        solar_agent = SolarCalcOrgo(
+            project_id=PROJECT_ID,
+            orgo_api_key=ORGO_API_KEY,
+            claude_api_key=CLAUDE_API_KEY
+        )
+    except Exception as e:
+        print(f"❌ Failed to initialize SolarCalcOrgo: {e}")
+        return
+    
+    print("🌞 SolarCalc Orgo - Interactive Solar Analysis")
+    print("=" * 80)
+    print("Welcome to the interactive solar potential calculator!")
+    print("This tool will analyze solar potential for addresses you provide.")
+    
+    # Get addresses from user
+    addresses = get_user_addresses()
+    
+    if not addresses:
+        print("🚫 No addresses provided. Exiting...")
+        return
+    
+    # Confirm addresses
+    if not confirm_addresses(addresses):
+        print("🚫 Analysis cancelled by user.")
+        return
+    
+    print(f"\n🚀 Starting analysis of {len(addresses)} address(es)...")
     print("=" * 80)
     
-    test_addresses = [
-        "San francisco, Larkin Street",
-        # "Eiffel Tower, Paris, France",
-        # "Times Square, New York, USA"
-    ]
-    
     # Execute solar calculations
-    for i, test_address in enumerate(test_addresses):
-        print(f"\n🏠 Testing {i+1}/{len(test_addresses)}: {test_address}")
-        solar_data = solar_agent.calculate_solar_potential(test_address)
+    successful_calculations = 0
+    failed_calculations = 0
+    
+    for i, address in enumerate(addresses):
+        try:
+            display_progress_bar(i, len(addresses), address)
+            
+            print(f"\n🔍 Analyzing: {address}")
+            print("-" * 60)
+            
+            # Calculate solar potential
+            solar_data = solar_agent.calculate_solar_potential(address)
+            
+            if solar_data:
+                # Generate and display report
+                report = solar_agent.generate_enhanced_report(address, solar_data)
+                print(report)
+                successful_calculations += 1
+                print(f"✅ Analysis completed for: {address}")
+            else:
+                print(f"❌ Failed to get solar data for: {address}")
+                failed_calculations += 1
+            
+            # Wait between calculations
+            if i < len(addresses) - 1:
+                wait_time = 30
+                print(f"\n⏸️  Waiting {wait_time} seconds before next calculation...")
+                
+                # Countdown timer
+                for remaining in range(wait_time, 0, -1):
+                    print(f"\rNext analysis in: {remaining} seconds", end="", flush=True)
+                    time.sleep(1)
+                print("\r" + " " * 30 + "\r", end="")  
         
-        # Generate and display report
-        report = solar_agent.generate_enhanced_report(test_address, solar_data)
-        print(report)
+        except KeyboardInterrupt:
+            print("\n\n⚠️  Analysis interrupted by user.")
+            break
+        except Exception as e:
+            print(f"❌ Error analyzing {address}: {e}")
+            failed_calculations += 1
+            continue
+    
+   
+    display_progress_bar(len(addresses), len(addresses), "Complete!")
+    
+    
+    print("\n" + "=" * 80)
+    print("📊 ANALYSIS SUMMARY")
+    print("=" * 80)
+    print(f"✅ Successful analyses: {successful_calculations}")
+    print(f"❌ Failed analyses: {failed_calculations}")
+    print(f"📍 Total addresses processed: {len(addresses)}")
+    
+    if successful_calculations > 0:
         
-        if i < len(test_addresses) - 1:
-            print("\n⏸️ Waiting 30 seconds before next calculation...")
-            time.sleep(30)
-    
-    # Debug info
-    print("\n🔍 DEBUG - Last calculation details:")
-    solar_agent.debug_last_results()
-    
-    # Launch Streamlit Dashboard
-    print("\n" + "="*80)
-    print("🚀 LAUNCHING INTERACTIVE DASHBOARD")
-    print("="*80)
-    
-    solar_agent.launch_streamlit_dashboard()
-    
-    print("\n✅ Analysis complete! Dashboard is running.")
-    print("🔗 Visit http://localhost:8501 to view your results")
+        print("\n🔍 DEBUG - Last calculation details:")
+        solar_agent.debug_last_results()
+        
+        # Launch Streamlit Dashboard
+        print("\n" + "="*80)
+        print("🚀 LAUNCHING INTERACTIVE DASHBOARD")
+        print("="*80)
+        
+        try:
+            solar_agent.launch_streamlit_dashboard()
+            print("\n✅ Analysis complete! Dashboard is running.")
+            print("🔗 Visit http://localhost:8501 to view your results")
+        except Exception as e:
+            print(f"❌ Failed to launch dashboard: {e}")
+            print("💡 You can still view the analysis results above.")
+    else:
+        print("\n⚠️  No successful analyses to display in dashboard.")
+        print("💡 Please check your addresses and try again.")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n\n👋 Program terminated by user. Goodbye!")
+    except Exception as e:
+        print(f"\n❌ Unexpected error: {e}")
+        print("💡 Please check your configuration and try again.")

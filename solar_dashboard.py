@@ -11,15 +11,15 @@ import folium
 from streamlit_folium import folium_static
 import numpy as np
 
-# Configuration de la page
+# Page configuration
 st.set_page_config(
-    page_title="🌞 SolarCalc - Analyse Solaire",
+    page_title="🌞 GreenRay - Solar Analysis",
     page_icon="🌞",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# CSS personnalisé pour une interface moderne
+# Custom CSS for modern interface
 st.markdown("""
 <style>
     .main-header {
@@ -80,7 +80,7 @@ class SolarDashboard:
         self.results_folder = results_folder
         
     def load_results(self):
-        """Charger tous les résultats disponibles"""
+        """Load all available results"""
         files = glob.glob(f"{self.results_folder}/solar_calc_*.json")
         if not files:
             return []
@@ -92,19 +92,19 @@ class SolarDashboard:
                     data = json.load(f)
                     results.append(data)
             except Exception as e:
-                st.error(f"Erreur lors du chargement de {file}: {e}")
+                st.error(f"Error loading {file}: {e}")
         
         return sorted(results, key=lambda x: x.get('timestamp', ''), reverse=True)
     
     def create_map(self, lat, lon, address):
-        """Créer une carte interactive"""
+        """Create an interactive map"""
         if lat and lon:
             m = folium.Map(location=[lat, lon], zoom_start=12)
             
             folium.Marker(
                 [lat, lon],
                 popup=f"🏠 {address}",
-                tooltip="Cliquez pour plus d'infos",
+                tooltip="Click for more info",
                 icon=folium.Icon(color='orange', icon='sun', prefix='fa')
             ).add_to(m)
             
@@ -112,12 +112,12 @@ class SolarDashboard:
         return None
     
     def create_production_gauge(self, production, max_production=8000):
-        """Créer un gauge pour la production"""
+        """Create a production gauge"""
         fig = go.Figure(go.Indicator(
             mode = "gauge+number+delta",
             value = production or 0,
             domain = {'x': [0, 1], 'y': [0, 1]},
-            title = {'text': "Production Annuelle (kWh)"},
+            title = {'text': "Annual Production (kWh)"},
             delta = {'reference': max_production * 0.5},
             gauge = {
                 'axis': {'range': [None, max_production]},
@@ -145,7 +145,7 @@ class SolarDashboard:
         return fig
     
     def create_savings_chart(self, production, electricity_cost):
-        """Créer un graphique des économies sur 25 ans"""
+        """Create a 25-year savings chart"""
         if not production or not electricity_cost:
             return None
         
@@ -159,7 +159,7 @@ class SolarDashboard:
             x=years,
             y=cumulative_savings,
             mode='lines+markers',
-            name='Économies cumulées',
+            name='Cumulative Savings',
             line=dict(color='#FF6B35', width=3),
             marker=dict(size=6, color='#FF6B35'),
             fill='tonexty',
@@ -168,12 +168,12 @@ class SolarDashboard:
         
         system_cost = 15000
         fig.add_hline(y=system_cost, line_dash="dash", line_color="red", 
-                     annotation_text="Coût du système", annotation_position="bottom right")
+                     annotation_text="System Cost", annotation_position="bottom right")
         
         fig.update_layout(
-            title="💰 Économies Cumulées sur 25 ans",
-            xaxis_title="Années",
-            yaxis_title="Économies ($)",
+            title="💰 Cumulative Savings Over 25 Years",
+            xaxis_title="Years",
+            yaxis_title="Savings ($)",
             template="plotly_white",
             height=400,
             showlegend=True
@@ -182,7 +182,7 @@ class SolarDashboard:
         return fig
     
     def display_metrics(self, data):
-        """Afficher les métriques principales"""
+        """Display main metrics"""
         extracted = data.get('extracted_data', {})
         
         col1, col2, col3, col4 = st.columns(4)
@@ -191,95 +191,95 @@ class SolarDashboard:
             production = extracted.get('annual_production_kwh')
             if production:
                 st.metric(
-                    label="🔋 Production Annuelle",
+                    label="🔋 Annual Production",
                     value=f"{production:,.0f} kWh",
-                    delta=f"Pour 5kWp installés"
+                    delta=f"For 5kWp installed"
                 )
             else:
-                st.metric(label="🔋 Production Annuelle", value="Non disponible")
+                st.metric(label="🔋 Annual Production", value="Not available")
         
         with col2:
             irradiation = extracted.get('irradiation_kwh_m2')
             if irradiation:
                 st.metric(
-                    label="☀️ Irradiation Solaire",
+                    label="☀️ Solar Irradiation",
                     value=f"{irradiation:,.0f} kWh/m²",
-                    delta="Par an"
+                    delta="Per year"
                 )
             else:
-                st.metric(label="☀️ Irradiation Solaire", value="Non disponible")
+                st.metric(label="☀️ Solar Irradiation", value="Not available")
         
         with col3:
             cost = extracted.get('electricity_cost_usd_kwh')
             if cost:
                 st.metric(
-                    label="💡 Coût Électricité",
+                    label="💡 Electricity Cost",
                     value=f"${cost:.3f}/kWh",
-                    delta=f"Pays: {extracted.get('country', 'N/A')}"
+                    delta=f"Country: {extracted.get('country', 'N/A')}"
                 )
             else:
-                st.metric(label="💡 Coût Électricité", value="Non disponible")
+                st.metric(label="💡 Electricity Cost", value="Not available")
         
         with col4:
             if production and cost:
                 savings = production * cost
                 st.metric(
-                    label="💰 Économies/An",
+                    label="💰 Annual Savings",
                     value=f"${savings:,.0f}",
-                    delta="Estimation"
+                    delta="Estimate"
                 )
             else:
-                st.metric(label="💰 Économies/An", value="Non calculable")
+                st.metric(label="💰 Annual Savings", value="Not calculable")
     
     def run(self):
-        """Lancer l'interface principale"""
+        """Launch main interface"""
         st.markdown("""
         <div class="main-header">
-            <h1>🌞 SolarCalc Dashboard</h1>
-            <p>Analyse Intelligente du Potentiel Solaire</p>
+            <h1>🌞 GreenRay Dashboard</h1>
+            <p>Intelligent Solar Potential Analysis</p>
         </div>
         """, unsafe_allow_html=True)
         
         results = self.load_results()
         
         if not results:
-            st.error("❌ Aucun résultat trouvé. Veuillez d'abord exécuter une analyse solaire.")
-            st.info("💡 Pour générer des données, utilisez la classe SolarCalcOrgo pour analyser des adresses.")
+            st.error("❌ No results found. Please run a solar analysis first.")
+            st.info("💡 To generate data, use the SolarCalcOrgo class to analyze addresses.")
             return
         
         with st.sidebar:
-            st.header("⚙️ Paramètres")
+            st.header("⚙️ Settings")
             
-            addresses = [f"{r.get('address', 'Adresse inconnue')} ({r.get('timestamp', 'N/A')})" 
+            addresses = [f"{r.get('address', 'Unknown address')} ({r.get('timestamp', 'N/A')})" 
                         for r in results]
             
             selected_idx = st.selectbox(
-                "Choisir une analyse:",
+                "Select an analysis:",
                 range(len(addresses)),
                 format_func=lambda x: addresses[x]
             )
             
-            if st.button("🔄 Actualiser les données"):
+            if st.button("🔄 Refresh data"):
                 st.rerun()
         
         selected_data = results[selected_idx]
         
-        st.subheader("📊 Métriques Principales")
+        st.subheader("📊 Key Metrics")
         self.display_metrics(selected_data)
         
         col1, col2 = st.columns([1, 1])
         
         with col1:
-            st.subheader("🔍 Analyse")
+            st.subheader("🔍 Analysis")
             extracted = selected_data.get('extracted_data', {})
             status = extracted.get('status', 'unknown')
             
             if status == 'completed':
-                st.markdown('<div class="success-box">✅ <strong>Analyse complète</strong></div>', unsafe_allow_html=True)
+                st.markdown('<div class="success-box">✅ <strong>Complete analysis</strong></div>', unsafe_allow_html=True)
             elif status == 'partial':
-                st.markdown('<div class="warning-box">⚠️ <strong>Analyse partielle</strong></div>', unsafe_allow_html=True)
+                st.markdown('<div class="warning-box">⚠️ <strong>Partial analysis</strong></div>', unsafe_allow_html=True)
             else:
-                st.markdown('<div class="error-box">❌ <strong>Échec de l\'analyse</strong></div>', unsafe_allow_html=True)
+                st.markdown('<div class="error-box">❌ <strong>Analysis failed</strong></div>', unsafe_allow_html=True)
             
             lat = extracted.get('latitude')
             lon = extracted.get('longitude')
@@ -287,21 +287,21 @@ class SolarDashboard:
             if lat and lon:
                 st.markdown(f"""
                 <div class="location-info">
-                    <h3>📍 Localisation</h3>
-                    <p><strong>Coordonnées:</strong> {lat:.4f}°, {lon:.4f}°</p>
-                    <p><strong>Pays:</strong> {extracted.get('country', 'Non identifié')}</p>
+                    <h3>📍 Location</h3>
+                    <p><strong>Coordinates:</strong> {lat:.4f}°, {lon:.4f}°</p>
+                    <p><strong>Country:</strong> {extracted.get('country', 'Not identified')}</p>
                 </div>
                 """, unsafe_allow_html=True)
         
         with col2:
             production = extracted.get('annual_production_kwh')
             if production:
-                st.subheader("⚡ Jauge de Production")
+                st.subheader("⚡ Production Gauge")
                 gauge_fig = self.create_production_gauge(production)
                 st.plotly_chart(gauge_fig, use_container_width=True)
         
         if extracted.get('latitude') and extracted.get('longitude'):
-            st.subheader("🗺️ Carte de Localisation")
+            st.subheader("🗺️ Location Map")
             map_obj = self.create_map(
                 extracted['latitude'], 
                 extracted['longitude'], 
@@ -314,7 +314,7 @@ class SolarDashboard:
         cost = extracted.get('electricity_cost_usd_kwh')
         
         if production and cost:
-            st.subheader("📈 Analyse Économique")
+            st.subheader("📈 Economic Analysis")
             savings_fig = self.create_savings_chart(production, cost)
             st.plotly_chart(savings_fig, use_container_width=True)
 
