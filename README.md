@@ -1,6 +1,4 @@
-Voici un **README complet** en anglais pour ton projet **GreenRay AI** — adapté pour Devpost, GitHub ou toute soumission de hackathon. Il contient les sections classiques : présentation, problème, solution, fonctionnement, stack, limitations, et améliorations futures.
 
----
 
 # 🌞 GreenRay: Autonomous Solar Analysis Agent
 
